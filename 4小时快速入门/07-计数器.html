@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app {
+            position: absolute;
+            left: 40%;
+            top: 40%;
+        }
+        
+        .input-num {
+            display: block;
+            width: 100%;
+            height: 100%;
+            box-shadow: 4px 4px 5px rgb(169, 169, 169);
+            border-radius: 10px 10px 10px 10px;
+        }
+        
+        .input-num button:first-of-type {
+            width: 110px;
+            height: 50px;
+            border: none;
+            font-size: 30px;
+            border-radius: 10px 0px 0px 10px;
+            color: brown;
+            background-color: rgba(169, 169, 169, 0.699);
+        }
+        
+        .input-num button:last-of-type {
+            width: 110px;
+            height: 50px;
+            border: none;
+            font-size: 30px;
+            border-radius: 0px 10px 10px 0px;
+            color: brown;
+            background-color: rgba(169, 169, 169, 0.616);
+        }
+        
+        span {
+            display: inline-block;
+            width: 110px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            font-size: 30px;
+        }
+        
+        img {
+            position: relative;
+            top: 30px;
+            left: 169px;
+            transform: scale(0.7, 0.7);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- html结构 -->
+    <div id="app">
+        <!-- 计数器功能区域 -->
+        <div class="input-num">
+            <button @click="sub"> - </button>
+            <span id="p">{{ num }}</span>
+            <button @click="add "> + </button>
+        </div>
+        <img src="http://www.itheima.com/images/logo.png" alt="" />
+    </div>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 编码 -->
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                num: 1
+            },
+            methods: {
+                add: function() {
+                    if (this.num < 10) {
+                        this.num++;
+                    } else {
+                        alert('别点啦最大了')
+                    }
+
+                },
+                sub: function() {
+                    if (this.num > 0) {
+                        this.num--;
+                    } else {
+                        alert('别点啦最小了')
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

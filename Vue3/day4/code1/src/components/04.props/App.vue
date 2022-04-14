@@ -1,0 +1,25 @@
+<template>
+  <div>
+    <h1>这是App.vue根组件</h1>
+    <hr />
+    <my-article :title="info.title" :author="'post by ' + info.author" pub-time="1989"></my-article>
+  </div>
+</template>
+
+<script>
+import MyArticle from './Article.vue'
+export default {
+  name: 'MyApp',
+  components: {
+    MyArticle
+  },
+  data() {
+    return {
+      info: {
+        title: 'abc',
+        author: '123'
+      }
+    }
+  }
+}
+</script>
